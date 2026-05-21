@@ -16,3 +16,7 @@ A web-based UI simulation featuring:
 * Centered taskbar and start menu.
 * Custom "Architect" aesthetic (Glassmorphism/Dark Mode).
 * Functional mock-up applications.
+
+---
+
+### Languages:
