@@ -20,3 +20,4 @@ A web-based UI simulation featuring:
 ---
 
 ### Languages:
+[Chinese Simplifiied](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_ch_simplified.md) [Russian](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_ru.md) [Turkish](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_tr.md)
