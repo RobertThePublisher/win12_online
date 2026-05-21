@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Windows 12 Concept</title>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+    <style>
+        body, html { margin: 0; height: 100%; overflow: hidden; font-family: 'Segoe UI', sans-serif;
+            background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa') no-repeat center center fixed;
+            background-size: cover; }
+        
+        /* Taskbar */
+        #taskbar { position: absolute; bottom: 0; width: 100%; height: 50px; background: white; display: flex; align-items: center; justify-content: center; z-index: 1000; }
+        #start-btn { width: 50px; height: 50px; background: #0078d4; color: white; border: none; cursor: pointer; font-size: 20px; }
+        
+        /* Start Menu */
+        #start-menu { display: none; position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); width: 300px; height: 400px; background: rgba(255,255,255,0.9); border-radius: 10px; transition: 0.3s; padding: 20px; }
+        .show { display: block !important; animation: slideUp 0.3s ease; }
+        @keyframes slideUp { from { bottom: 0; opacity: 0; } to { bottom: 60px; opacity: 1; } }
+
+        /* Warning Popup */
+        #warning { position: absolute; top: 20px; right: 20px; background: #333; color: white; padding: 15px; border-radius: 8px; width: 250px; }
+    </style>
+</head>
+<body>
+
+    <div id="warning">
+        <strong>Warning:</strong> Not affiliated with Microsoft. Concept mock-up only.
+        <br><button onclick="this.parentElement.style.display='none'">Close</button>
+    </div>
+
+    <div id="start-menu">
+        <h3>Apps</h3>
+        <ul>
+            <li>File Explorer</li>
+            <li>Browser</li>
+            <li>Settings</li>
+        </ul>
+    </div>
+
+    <div id="taskbar">
+        <button id="start-btn" onclick="document.getElementById('start-menu').classList.toggle('show')">⊞</button>
+    </div>
+
+    <script>
+        // Add more functional logic here
+        console.log("Windows 12 Mockup Initialized");
+    </script>
+</body>
+</html>
