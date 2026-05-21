@@ -2,49 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Windows 12 Concept</title>
+    <title>Windows 12</title>
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
     <style>
         body, html { margin: 0; height: 100%; overflow: hidden; font-family: 'Segoe UI', sans-serif;
             background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa') no-repeat center center fixed;
             background-size: cover; }
         
-        /* Taskbar */
-        #taskbar { position: absolute; bottom: 0; width: 100%; height: 50px; background: white; display: flex; align-items: center; justify-content: center; z-index: 1000; }
-        #start-btn { width: 50px; height: 50px; background: #0078d4; color: white; border: none; cursor: pointer; font-size: 20px; }
+        /* Taskbar: Glassmorphism White */
+        #taskbar { position: absolute; bottom: 0; width: 100%; height: 48px; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(15px); display: flex; align-items: center; justify-content: center; z-index: 1000; }
         
-        /* Start Menu */
-        #start-menu { display: none; position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); width: 300px; height: 400px; background: rgba(255,255,255,0.9); border-radius: 10px; transition: 0.3s; padding: 20px; }
-        .show { display: block !important; animation: slideUp 0.3s ease; }
-        @keyframes slideUp { from { bottom: 0; opacity: 0; } to { bottom: 60px; opacity: 1; } }
+        /* Centered Win10 Icon Button */
+        #start-btn { width: 48px; height: 48px; background: transparent; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+        #start-btn:hover { background: rgba(0, 0, 0, 0.1); }
+        #start-btn svg { width: 24px; height: 24px; fill: #0078d4; }
 
-        /* Warning Popup */
-        #warning { position: absolute; top: 20px; right: 20px; background: #333; color: white; padding: 15px; border-radius: 8px; width: 250px; }
+        /* Start Menu: Architect Style */
+        #start-menu { display: none; position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); width: 350px; height: 450px; background: rgba(20, 20, 20, 0.85); backdrop-filter: blur(20px); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); color: white; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .show { display: block !important; animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+        @keyframes slideUp { from { bottom: 40px; opacity: 0; } to { bottom: 60px; opacity: 1; } }
+
+        #warning { position: absolute; top: 20px; right: 20px; background: rgba(255,0,0,0.8); color: white; padding: 15px; border-radius: 8px; width: 280px; font-size: 12px; z-index: 2000; }
     </style>
 </head>
 <body>
 
     <div id="warning">
-        <strong>Warning:</strong> Not affiliated with Microsoft. Concept mock-up only.
+        <strong>LEGAL NOTICE:</strong> Not affiliated with Microsoft. Concept mock-up only.
         <br><button onclick="this.parentElement.style.display='none'">Close</button>
     </div>
 
     <div id="start-menu">
-        <h3>Apps</h3>
-        <ul>
-            <li>File Explorer</li>
-            <li>Browser</li>
-            <li>Settings</li>
-        </ul>
+        <h2 style="color: #bc82ff;">ZenithOS Concept</h2>
+        <p>System Active. Apps:</p>
+        <div onclick="alert('Launching Terminal...')">Terminal</div>
     </div>
 
     <div id="taskbar">
-        <button id="start-btn" onclick="document.getElementById('start-menu').classList.toggle('show')">⊞</button>
+        <button id="start-btn" onclick="document.getElementById('start-menu').classList.toggle('show')">
+            <!-- Windows 10 Icon (SVG) -->
+            <svg viewBox="0 0 24 24"><path d="M3 3h8v8H3V3zm0 10h8v8H3v-8zM13 3h8v8h-8V3zm0 10h8v8h-8v-8z"/></svg>
+        </button>
     </div>
 
-    <script>
-        // Add more functional logic here
-        console.log("Windows 12 Mockup Initialized");
-    </script>
 </body>
 </html>
