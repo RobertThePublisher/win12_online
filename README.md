@@ -19,5 +19,11 @@ A web-based UI simulation featuring:
 
 ---
 
+### Try in: 
+[Vercel](https://win12-online.vercel.app/)
+[GitHub](https://the-real-architect-official.github.io/win12_online/)
+
+---
+
 ### Languages:
 [Chinese Simplifiied](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_ch_simplified.md) [Russian](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_ru.md) [Turkish](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_tr.md)
