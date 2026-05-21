@@ -1,2 +1,18 @@
-# win12_online
-This operating system is not affiliated with more companies or existing OS. it's a concept mock-up. not a fake defensive fraud scam
+# Windows 12 Concept Mock-up
+
+**Disclaimer:** This project is a non-affiliated, unofficial concept mock-up. It is **not** created, endorsed, or supported by Microsoft. This is a personal project for educational and design exploration purposes.
+
+---
+
+### ⚠️ Legal Warning
+* **No Affiliation:** This OS is not affiliated with, nor does it claim to represent, Microsoft.
+* **Prohibition:** Any unauthorized impersonation or re-upload of this project without explicit permission may result in a DMCA takedown request.
+* **Liability:** I am not responsible for any misuse of this concept, nor for any "fake defensive OS" claims made by third parties. This is strictly a front-end concept mock-up.
+
+---
+
+### Project Overview
+A web-based UI simulation featuring:
+* Centered taskbar and start menu.
+* Custom "Architect" aesthetic (Glassmorphism/Dark Mode).
+* Functional mock-up applications.
