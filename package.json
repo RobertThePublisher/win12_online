@@ -1,0 +1,30 @@
+{
+  "name": "windows-12-desktop",
+  "version": "1.0.0",
+  "description": "Windows 12 Concept",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.architect.windows12",
+    "productName": "Windows 12 Desktop",
+    "win": {
+      "target": "nsis",
+      "icon": "favicon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    },
+    "publish": {
+      "provider": "github"
+    }
+  },
+  "devDependencies": {
+    "electron": "^latest",
+    "electron-builder": "^latest"
+  }
+}
