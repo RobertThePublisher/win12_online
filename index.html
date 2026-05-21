@@ -473,10 +473,6 @@
                 <img class="bookmark-fav" src="https://www.youtube.com/favicon.ico" alt="">
                 Funny Pet Moments
             </div>
-            <div class="bookmark-item" onclick="loadEmbed('lofi-music')">
-                <img class="bookmark-fav" src="https://www.youtube.com/favicon.ico" alt="">
-                Lofi Ambient Beat
-            </div>
             <div class="bookmark-item" onclick="loadEmbed('nature-relax')">
                 <img class="bookmark-fav" src="https://www.youtube.com/favicon.ico" alt="">
                 Nature 4K Relax
@@ -551,9 +547,28 @@
                 <svg class="app-icon-placeholder" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
                 <span>WinBrowser Workspace</span>
             </div>
-            <div class="app-item" onclick="alert('Launching Terminal Instance...')">
-                <svg class="app-icon-placeholder" style="fill:#bc82ff;" viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.11-.89-2-2-2zm0 14H4V8h16v10zm-2-1h-6v-2h6v2zm-8.43-2.59L6.17 11.02 9.57 7.62l1.41 1.42-2 1.98 2 1.98-1.41 1.41z"/></svg>
-                <span>System Terminal</span>
+
+            <!-- Inside your terminal window content -->
+<div class="terminal-window" id="terminal">
+  <div class="terminal-header">
+    <span>System Terminal</span>
+    <div class="terminal-controls">
+      <button onclick="closeWindow(this)">✕</button>
+    </div>
+  </div>
+  
+  <div class="terminal-body" id="terminal-body">
+    <div class="terminal-output" id="terminal-output">
+      <p>Welcome to Win12 Terminal (Architect Edition)</p>
+      <p>Type 'help' for available commands.</p>
+    </div>
+    
+    <div class="terminal-input-line">
+      <span class="prompt">guest@win12-architect:~$</span>
+      <input type="text" id="terminal-input" autofocus spellcheck="false" />
+    </div>
+  </div>
+</div>
             </div>
         </div>
 
