@@ -1,23 +1,22 @@
-# Contributing to Windows 12 Desktop
+# Contributing to Windows 12 Concept
 
-Thank you for your interest in contributing to the Windows 12 Desktop project! We aim to create a sleek, modern desktop experience. Please follow these guidelines to ensure a smooth workflow.
+Thank you for your interest in contributing to **Win12 Online**!
 
-## How to Contribute
-1. **Fork the Repository**: Create your own fork of the project.
-2. **Create a Branch**: Use a descriptive name for your feature (e.g., `feature/add-calculator` or `fix/browser-styling`).
-3. **Commit Messages**: Keep them clear and concise. Reference the issue number if applicable.
-4. **Submit a Pull Request**: Explain the changes you've made and why they are needed.
+This is a creative front-end concept project with an "Architect" glassmorphism aesthetic. We welcome contributions from developers, designers, translators, and enthusiasts.
 
-## Development Standards
-- **Folder Structure**: Always keep app-specific logic inside the `apps/` directory.
-- **Visual Identity**: Ensure all new icons match the established "neon purple/magenta overlay square grid" aesthetic.
-- **Compatibility**: Test your changes in both the browser (GitHub Pages) and the Electron desktop app.
-- **Documentation**: If you add a new app, please update the `README.md` inside the `apps/` folder.
+## How You Can Contribute
 
-## Reporting Issues
-If you find a bug, please check the existing [Issues] page first. If it's a new issue, include:
-- A clear description of the bug.
-- Steps to reproduce it.
-- Screenshots if possible.
+- Report bugs or suggest new features
+- Add or improve mock applications
+- Improve Electron desktop version
+- Create or enhance translations
+- UI/UX improvements and animations
+- Documentation updates
 
-*Note: This project is a UI concept and is not affiliated with Microsoft Corporation.*
+## Development Setup
+
+```bash
+git clone https://github.com/the-real-architect-official/win12_online.git
+cd win12_online
+npm install
+npm start          # Run with Electron
