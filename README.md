@@ -28,7 +28,7 @@ A web-based UI simulation featuring:
 ### Languages:
 [Chinese Simplifiied](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_ch_simplified.md) [Russian](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_ru.md) [Turkish](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_tr.md) [Turkmenistan
 ](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_turkmen.md) [Spanish](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_es.md) [French
-](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_fr.md) [German](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_de.md) [Portuguese/Brazil](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_pt-br.md) [Arabic](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_ar.md) [Indonesian](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_id.md)
+](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_fr.md) [German](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_de.md) [Portuguese/Brazil](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_pt-br.md) [Arabic](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_ar.md) [Indonesian](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_id.md) [Japanese](https://github.com/the-real-architect-official/win12_online/blob/main/README/README_ja.md)
 
 ## Development Setup
 
