@@ -1,6 +1,8 @@
 # Changelog:
-## 0.0.3: Adding apps folder with a README.md:
-- Seperated these apps to apps/ folder because lack of index.html can sometimes have problems
+## 0.0.3:
+- Migrated the repository
+- Added more languages of README.md
+- The data by you is untouched. not uploaded by in our servers
 ## 0.0.2: Adding a Cursor and Favicon 🪐
 - PERMANENTLY DITCHED the white document/gray globe placeholder icon.
 - Deployed the custom neon purple/magenta overlay square grid favicon.
