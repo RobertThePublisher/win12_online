@@ -365,7 +365,7 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
 <!-- WELCOME / CONCEPTUAL WARNING -->
 <div id="welcome">
   <div class="wb">
-    <div class="sub">Windows 12 — Architect Edition</div>
+    <div class="sub">Windows 12</div>
     <h1>⚠️ Conceptual Simulation</h1>
     <div class="warn-box">
       <strong>This is a fictional browser-based simulation.</strong> Not affiliated with or endorsed by Microsoft®.<br><br>
@@ -458,7 +458,7 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
   <div class="sm-label">Pinned</div>
   <div class="sm-grid" id="sm-grid"></div>
   <div class="sm-foot">
-    <span style="font-size:11px;color:#333">Win12 Architect</span>
+    <span style="font-size:11px;color:#333">Win12 </span>
     <button class="sm-pwbtn" onclick="pwrMenu()">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff6060"><path d="M13 3h-2v10h2V3zm4.39 2.22l-1.42 1.42C17.99 8.21 19 10.01 19 12c0 3.87-3.13 7-7 7s-7-3.13-7-7c0-1.99 1.01-3.79 2.03-5.36L5.61 5.22C3.41 7.14 2 10 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-2-.14-4.86-2.61-6.78z"/></svg>
       Power
@@ -523,7 +523,7 @@ const defaultVFS={
   '/AppData':{type:'dir',children:['Local','Roaming','Temp']},
   '/AppData/Local':{type:'dir',children:['cache','logs']},
   '/Temp':{type:'dir',children:['tmp001.tmp','tmp002.tmp']},
-  '/Desktop/Readme.txt':{type:'file',ext:'txt',content:'Welcome to Windows 12 Architect Edition.\n\nThis is a browser-based simulation.\nYour files and notes are saved in localStorage.\n\nDouble-click any file to open it.\nRight-click anywhere for the context menu.'},
+  '/Desktop/Readme.txt':{type:'file',ext:'txt',content:'Welcome to Windows 12\n\nThis is a browser-based simulation.\nYour files and notes are saved in localStorage.\n\nDouble-click any file to open it.\nRight-click anywhere for the context menu.'},
   '/Desktop/My Notes.md':{type:'file',ext:'md',content:'# My Notes\n\n- [ ] Build something amazing\n- [ ] Learn keyboard shortcuts (Ctrl+Shift+/)\n- [ ] Try the terminal (Ctrl+Alt+T)\n- [ ] Paint something (Ctrl+Shift+P)\n\n## Ideas\nThe future is now.'},
   '/Desktop/Photo.jpg':{type:'file',ext:'jpg',content:null},
   '/Documents/Report.docx':{type:'file',ext:'docx',content:'[Word Document — simulated]\n\nQuarterly Report\n================\n\nSales increased by 24% YoY.\nNew markets opened in 3 regions.\n\nNext Steps:\n- Expand team\n- Increase R&D budget'},
@@ -869,7 +869,7 @@ exit        close terminal`,
   uname:()=>`Windows 12 NT Kernel 12.0.26100.0 x86_64`,
   ls:()=>{const n=vfs[fmPath];return n?(n.children.length?n.children.join('\n'):'(empty)'):'Directory not found';},
   dir:()=>TERM_CMDS.ls(),
-  sysinfo:()=>`OS        Windows 12 Architect Edition
+  sysinfo:()=>`OS        Windows 12
 Build     12.0.26100.0
 CPU       Intel Core i9-14900K @ 3.60GHz × 24
 RAM       16.0 GB DDR5-6400
@@ -921,12 +921,12 @@ Ping statistics for 8.8.8.8:
   history:()=>termHist.length?termHist.map((c,i)=>`${i+1}  ${c}`).join('\n'):'No history yet.',
   neofetch:()=>`<span style="color:var(--purple)">    ██████  ██████
    ██    ██
-   ██  ▄▄██  ██    </span><span style="color:#fff">OS:</span> <span style="color:#ccc">Windows 12 Architect</span>
-<span style="color:var(--purple)">   ██████  ██████   </span><span style="color:#fff">Host:</span> <span style="color:#ccc">ARCHITECT-PC (Virtual)</span>
+   ██  ▄▄██  ██    </span><span style="color:#fff">OS:</span> <span style="color:#ccc">Windows 12 </span>
+<span style="color:var(--purple)">   ██████  ██████   </span><span style="color:#fff">Host:</span> <span style="color:#ccc">WIN-PC (Virtual)</span>
 <span style="color:var(--purple)">   ██  ██  ██  ██   </span><span style="color:#fff">Kernel:</span> <span style="color:#ccc">NT 12.0.26100</span>
 <span style="color:var(--purple)">   ██    ████  ██   </span><span style="color:#fff">Shell:</span> <span style="color:#ccc">Win12Shell 2.0</span>
 <span style="color:var(--purple)">   ██████  ██████   </span><span style="color:#fff">Resolution:</span> <span style="color:#ccc">${window.innerWidth}×${window.innerHeight}</span>
-<span style="color:var(--purple)">                    </span><span style="color:#fff">Theme:</span> <span style="color:#ccc">Architect Dark [Glassmorphic]</span>
+<span style="color:var(--purple)">                    </span><span style="color:#fff">Theme:</span> <span style="color:#ccc">Dark [Glassmorphic]</span>
 <span style="color:var(--purple)">                    </span><span style="color:#fff">CPU:</span> <span style="color:#ccc">Intel Core i9-14900K (Simulated)</span>
 <span style="color:var(--purple)">                    </span><span style="color:#fff">RAM:</span> <span style="color:#ccc">16.0 GB DDR5</span>`,
   matrix:()=>{
@@ -946,7 +946,7 @@ function openTerminal(){
   makeWin('term','Terminal','https://img.icons8.com/color/48/console.png',660,440,140,90,b=>{
     b.innerHTML=`
       <div class="term-out" id="term-out-active">
-        <div class="tl sys">Windows 12 Terminal — Architect Edition v2.0</div>
+        <div class="tl sys">Windows 12 Terminal</div>
         <div class="tl sys">Build 12.0.26100  |  RAM: 16GB  |  CPU: i9-14900K (Simulated)</div>
         <div class="tl dim">──────────────────────────────────────────────────────</div>
         <div class="tl">Type <span style="color:var(--purple)">help</span> for available commands.</div>
@@ -1251,7 +1251,7 @@ function loadSetPage(name){
       </div>`,
     About:`<div class="set-title">About</div>
       <div class="set-card">
-        ${[['OS Name','Windows 12 Architect Edition'],['Build','12.0.26100.0 (Simulated)'],['Processor','Intel Core i9-14900K × 24 (Simulated)'],['Architecture','64-bit, x64'],['RAM','16.0 GB DDR5-6400'],['Storage','512 GB NVMe SSD'],['GPU','NVIDIA RTX 4090 24GB'],['Display',window.innerWidth+'×'+window.innerHeight],['Browser',navigator.userAgent.split(')')[0].split('(')[1]||'Unknown'],['Computer Name','ARCHITECT-PC'],['Domain','WORKGROUP']
+        ${[['OS Name','Windows 12'],['Build','12.0.26100.0 (Simulated)'],['Processor','Intel Core i9-14900K × 24 (Simulated)'],['Professional','64-bit, x64'],['RAM','16.0 GB DDR5-6400'],['Storage','512 GB NVMe SSD'],['GPU','NVIDIA RTX 4090 24GB'],['Display',window.innerWidth+'×'+window.innerHeight],['Browser',navigator.userAgent.split(')')[0].split('(')[1]||'Unknown'],['Computer Name','WIN12-PC'],['Domain','WORKGROUP']
         ].map(([k,v])=>`<div class="set-row"><div class="sr-lbl">${k}</div><span style="font-size:12px;color:#888">${v}</span></div>`).join('')}
       </div>`,
   };
@@ -1573,7 +1573,7 @@ function openSysInfo(){
   makeWin('si','System Information','https://img.icons8.com/color/48/computer.png',520,480,160,70,b=>{
     b.innerHTML=`<div class="si-body">
       <div class="si-section"><div class="si-sec-title">Operating System</div>
-        ${[['Name','Windows 12 Architect Edition'],['Build Number','12.0.26100.0'],['Edition','Architect'],['Architecture','64-bit (x86_64)'],['Install Date','January 15, 2026']].map(([k,v])=>`<div class="si-row"><div class="si-key">${k}</div><div class="si-val">${v}</div></div>`).join('')}
+        ${[['Name','Windows 12 '],['Build Number','12.0.26100.0'],['Install Date','January 15, 2026']].map(([k,v])=>`<div class="si-row"><div class="si-key">${k}</div><div class="si-val">${v}</div></div>`).join('')}
       </div>
       <div class="si-section"><div class="si-sec-title">Hardware</div>
         ${[['Processor','Intel Core i9-14900K @ 3.60GHz × 24'],['RAM','16.0 GB DDR5-6400'],['Storage','512 GB Samsung 990 Pro NVMe SSD'],['GPU','NVIDIA GeForce RTX 4090 24 GB'],['Motherboard','ASUS ROG MAXIMUS Z790 APEX'],['BIOS','Version 3.5 (2025-11-01)']].map(([k,v])=>`<div class="si-row"><div class="si-key">${k}</div><div class="si-val">${v}</div></div>`).join('')}
