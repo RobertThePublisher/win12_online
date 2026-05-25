@@ -1,25 +1,19 @@
-.taskbar{
-    position:fixed;
+@keyframes glowPulse{
+    0%{
+        box-shadow:0 0 10px cyan;
+    }
 
-    bottom:12px;
-    left:50%;
+    50%{
+        box-shadow:
+            0 0 20px cyan,
+            0 0 40px #008cff;
+    }
 
-    transform:translateX(-50%);
+    100%{
+        box-shadow:0 0 10px cyan;
+    }
+}
 
-    width:70%;
-    height:64px;
-
-    border-radius:24px;
-
-    background:rgba(10,15,35,0.72);
-
-    backdrop-filter:blur(20px);
-
-    border:1px solid rgba(255,255,255,0.08);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    gap:14px;
+.glow{
+    animation:glowPulse 3s infinite;
 }
