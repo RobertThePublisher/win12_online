@@ -1,6 +1,6 @@
 {
   "name": "windows-12-desktop",
-  "version": "0.0.3",
+  "version": "0.04",
   "description": "Windows 12 Concept",
   "main": "main.js",
   "scripts": {
