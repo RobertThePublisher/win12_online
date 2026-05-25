@@ -1,0 +1,25 @@
+.taskbar{
+    position:fixed;
+
+    bottom:12px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:70%;
+    height:64px;
+
+    border-radius:24px;
+
+    background:rgba(10,15,35,0.72);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:14px;
+}
