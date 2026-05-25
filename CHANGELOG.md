@@ -1,6 +1,5 @@
 # Changelog:
-## 0.04: 
-- Changed the version string. without second dot. it appears in 1.0.0+ versions
+## 0.0.4: 
 - Added 7 CSS files seperated on css folder
 - Created the css folder
 ## 0.0.3:
