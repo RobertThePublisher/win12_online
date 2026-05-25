@@ -1,0 +1,23 @@
+:root{
+    --bg:#050816;
+    --panel:rgba(15,20,40,0.72);
+
+    --cyan:#00f7ff;
+    --blue:#008cff;
+    --purple:#7b2fff;
+
+    --text:#ffffff;
+
+    --blur:18px;
+    --radius:18px;
+}
+
+body{
+    margin:0;
+    overflow:hidden;
+
+    background:#050816;
+    color:white;
+
+    font-family:"Segoe UI",sans-serif;
+}
