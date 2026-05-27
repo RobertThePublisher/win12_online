@@ -1,0 +1,12 @@
+{
+  "name": "win12-web-deployment-template",
+  "description": "A high-performance streaming template for Win12 Online mock-up deployment.",
+  "website": "https://github.io",
+  "topics": [
+    "windows-12",
+    "web-os",
+    "mockup",
+    "streaming-deployment",
+    "html5-os"
+  ]
+}
