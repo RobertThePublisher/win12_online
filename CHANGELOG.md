@@ -2,6 +2,8 @@
 ## 0.0.4: 
 - Added 7 CSS files seperated on css folder
 - Created the css folder
+- Added docs folder and electron build documentation
+- Added template.json
 ## 0.0.3:
 - Migrated the repository
 - Added more languages of README.md
