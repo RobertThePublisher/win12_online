@@ -4,6 +4,7 @@
 - Created the css folder
 - Added docs folder and electron build documentation
 - Added template.json
+- Added the wiki. service worker. something else
 ## 0.0.3:
 - Migrated the repository
 - Added more languages of README.md
