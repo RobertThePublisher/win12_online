@@ -4,8 +4,6 @@
 
 const Win12System = {
 
-    version: "0.0.4",
-
     boot() {
 
         console.log("WIN12 WEB boot initialized.");
