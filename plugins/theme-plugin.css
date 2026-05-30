@@ -1,0 +1,22 @@
+// ─── THEME PLUGIN LOADER ───
+const themeManager = {
+  current: LS.get('theme') || 'default',
+  themes: {},
+  
+  register(name, cssUrl) {
+    this.themes[name] = new ThemePlugin(name, cssUrl);
+  },
+  
+  apply(name) {
+    if (this.themes[this.current]) this.themes[this.current].unload();
+    if (this.themes[name]) {
+      this.themes[name].load();
+      this.current = name;
+      LS.set('theme', name);
+    }
+  }
+};
+
+// Register available themes
+themeManager.register('dark', 'plugins/dark-theme.css');
+themeManager.register('neon', 'plugins/neon-theme.css');
