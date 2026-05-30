@@ -2,6 +2,7 @@
 ## 0.0.5:
 - Added a theme plug-in and created a folder called plugins for plug-ins and extensions
 - Connected index.html to the plugins
+- Added a documentation called KEYBOARD_SHORTCUTS.md
 ## 0.0.4: 
 - Added 7 CSS files seperated on css folder
 - Created the css folder
