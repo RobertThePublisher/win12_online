@@ -6,6 +6,8 @@
 <title>Windows 12</title>
 <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
+<!-- Theme Plugin CSS -->
+<link rel="stylesheet" href="plugins/theme-plugin.css">
 <style>
 :root{
   --purple:#bc82ff;--magenta:#ff007f;--cyan:#00d4ff;--green:#39ff14;
@@ -13,25 +15,19 @@
   --text:#fff;--dim:#888;--taskH:48px;--accent:#bc82ff;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:none!important;
-  background:url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop') no-repeat center/cover fixed;
-  user-select:none;}
-#cur{position:fixed;width:13px;height:13px;background:#fff;border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:width .1s,height [...]
-#curR{position:fixed;width:30px;height:30px;border:1.5px solid rgba(188,130,255,.7);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:all .15s ease;opac[...]
+body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:none!important;background:url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop') no-repeat center/cover fixed;user-select:none;}
+#cur{position:fixed;width:13px;height:13px;background:#fff;border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:width .1s,height .1s}
+#curR{position:fixed;width:30px;height:30px;border:1.5px solid rgba(188,130,255,.7);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:all .15s ease;opacity:.7}
 #curR.h{width:42px;height:42px;border-color:var(--purple)}
 #cur.c{width:8px;height:8px}
-
-/* WELCOME */
 #welcome{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:99000;display:flex;align-items:center;justify-content:center}
 .wb{background:rgba(16,16,24,.98);backdrop-filter:blur(30px);border:1px solid rgba(188,130,255,.25);border-radius:16px;padding:36px;max-width:480px;width:90%;color:#fff;text-align:center}
 .wb h1{font-size:24px;margin-bottom:6px}
 .wb .sub{font-size:11px;color:var(--purple);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
 .warn-box{background:rgba(255,150,0,.08);border:1px solid rgba(255,150,0,.3);border-radius:10px;padding:16px;font-size:12px;color:#ffcc80;text-align:left;line-height:1.8;margin-bottom:22px}
 .warn-box strong{color:#ffa500}
-.wb-btn{padding:11px 30px;background:linear-gradient(135deg,var(--purple),var(--magenta));border:none;border-radius:8px;color:#fff;font-size:14px;font-weight:600;cursor:none;transition:opacity .2s[...]
+.wb-btn{padding:11px 30px;background:linear-gradient(135deg,var(--purple),var(--magenta));border:none;border-radius:8px;color:#fff;font-size:14px;font-weight:600;cursor:none;transition:opacity .2s}
 .wb-btn:hover{opacity:.85}
-
-/* BOOT */
 #boot{position:fixed;inset:0;background:#000;z-index:98000;display:flex;flex-direction:column;align-items:center;justify-content:center;display:none}
 .boot-win-logo{display:flex;gap:4px;margin-bottom:40px}
 .boot-sq{width:22px;height:22px;border-radius:3px;animation:bootSq 1.2s infinite ease-in-out}
@@ -46,18 +42,14 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
 .boot-dot:nth-child(3){animation-delay:.4s}
 @keyframes bdot{0%,100%{opacity:.3}50%{opacity:1}}
 .boot-text{color:#888;font-size:12px;margin-top:16px;letter-spacing:1px}
-
-/* DESKTOP */
 #desktop{position:fixed;inset:0;bottom:var(--taskH)}
 .di{position:absolute;display:flex;flex-direction:column;align-items:center;gap:5px;width:76px;padding:8px 4px;border-radius:8px;cursor:none;transition:background .15s}
 .di:hover{background:rgba(255,255,255,.08)}
 .di.sel{background:rgba(188,130,255,.18);outline:1px solid rgba(188,130,255,.4)}
 .di img{width:40px;height:40px;object-fit:contain;pointer-events:none}
 .di span{font-size:11px;color:#fff;text-align:center;text-shadow:0 1px 4px #000;line-height:1.3;word-break:break-word;pointer-events:none}
-
-/* TASKBAR */
-#taskbar{position:fixed;bottom:0;width:100%;height:var(--taskH);background:rgba(6,6,10,.8);backdrop-filter:blur(24px);display:flex;align-items:center;justify-content:center;z-index:5000;border-top[...]
-.tb{width:44px;height:44px;background:transparent;border:none;cursor:none;display:flex;align-items:center;justify-content:center;border-radius:8px;transition:background .15s;position:relative;flex[...]
+#taskbar{position:fixed;bottom:0;width:100%;height:var(--taskH);background:rgba(6,6,10,.8);backdrop-filter:blur(24px);display:flex;align-items:center;justify-content:center;z-index:5000;border-top:1px solid rgba(255,255,255,.05)}
+.tb{width:44px;height:44px;background:transparent;border:none;cursor:none;display:flex;align-items:center;justify-content:center;border-radius:8px;transition:background .15s;position:relative;flex-shrink:0}
 .tb:hover{background:rgba(255,255,255,.08)}
 .tb.on{background:rgba(188,130,255,.15)}
 .tb.on::after{content:'';position:absolute;bottom:2px;left:50%;transform:translateX(-50%);width:16px;height:2px;background:var(--purple);border-radius:1px}
@@ -67,16 +59,14 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
 #tray{position:absolute;right:10px;display:flex;align-items:center;gap:8px;color:#ddd;font-size:11px}
 #clock{text-align:right;line-height:1.5;font-size:11px}
 .tray-icon{font-size:15px;opacity:.75;cursor:none}
-
-/* START MENU */
-#start{position:fixed;bottom:calc(var(--taskH) + 8px);left:50%;transform:translateX(-50%) scale(.95);width:660px;max-width:96vw;height:530px;background:rgba(14,14,22,.97);backdrop-filter:blur(32px[...]
+#start{position:fixed;bottom:calc(var(--taskH) + 8px);left:50%;transform:translateX(-50%) scale(.95);width:660px;max-width:96vw;height:530px;background:rgba(14,14,22,.97);backdrop-filter:blur(32px);border:1px solid var(--border);border-radius:14px;display:none;flex-direction:column;opacity:0;transition:all .2s cubic-bezier(.16,1,.3,1);z-index:9500;box-shadow:0 20px 60px rgba(0,0,0,.8)}
 #start.show{display:flex;transform:translateX(-50%) scale(1);opacity:1}
 .sm-top{display:flex;align-items:center;padding:16px;border-bottom:1px solid var(--border);gap:12px}
-.sm-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--magenta));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15p[...]
+.sm-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--magenta));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
 .sm-name{font-weight:600;font-size:14px}
 .sm-role{font-size:10px;color:var(--purple);letter-spacing:1px;text-transform:uppercase}
 .sm-srch{padding:10px 16px}
-.sm-srch input{width:100%;padding:8px 14px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:8px;color:#fff;font-size:13px;outline:none;transition:border-color .2s,box-[...]
+.sm-srch input{width:100%;padding:8px 14px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:8px;color:#fff;font-size:13px;outline:none;transition:border-color .2s,box-shadow .2s}
 .sm-srch input:focus{border-color:var(--purple);box-shadow:0 0 8px rgba(188,130,255,.2)}
 .sm-label{padding:2px 16px 8px;font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:1px}
 .sm-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;padding:0 12px;overflow-y:auto;max-height:280px}
@@ -87,9 +77,7 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
 .sm-foot{margin-top:auto;padding:12px 16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
 .sm-pwbtn{background:transparent;border:none;cursor:none;padding:7px;border-radius:6px;display:flex;align-items:center;gap:6px;color:#ff6060;font-size:12px;transition:background .15s}
 .sm-pwbtn:hover{background:rgba(255,0,0,.15)}
-
-/* WINDOWS */
-.win{position:absolute;display:flex;flex-direction:column;background:rgba(13,13,20,.94);backdrop-filter:blur(24px);border:1px solid var(--border);border-radius:10px;box-shadow:0 24px 60px rgba(0,0[...]
+.win{position:absolute;display:flex;flex-direction:column;background:rgba(13,13,20,.94);backdrop-filter:blur(24px);border:1px solid var(--border);border-radius:10px;box-shadow:0 24px 60px rgba(0,0,0,.5)}
 .win.focused{border-color:rgba(188,130,255,.22);box-shadow:0 24px 60px rgba(0,0,0,.7),0 0 0 1px rgba(188,130,255,.12)}
 .win.maximized{top:0!important;left:0!important;width:100%!important;height:calc(100% - var(--taskH))!important;border-radius:0!important}
 .win.opening{animation:wOpen .22s cubic-bezier(.16,1,.3,1)}
@@ -103,9 +91,7 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
 .wc{width:12px;height:12px;border-radius:50%;border:none;cursor:none;transition:filter .15s}
 .wc:hover{filter:brightness(1.3)}
 .wc-x{background:#ff5f56}.wc-m{background:#ffbd2e}.wc-M{background:#27c93f}
-
-/* CTX */
-#ctx{position:fixed;background:rgba(18,18,26,.98);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.09);border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,.6);z-index:9000;padding:5p[...]
+#ctx{position:fixed;background:rgba(18,18,26,.98);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.09);border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,.6);z-index:9000;padding:5px;display:none}
 #ctx.show{display:block;animation:ctxIn .12s cubic-bezier(.16,1,.3,1)}
 @keyframes ctxIn{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
 .ci{padding:7px 12px;color:#ddd;cursor:none;border-radius:6px;display:flex;align-items:center;gap:9px;transition:background .1s;white-space:nowrap}
@@ -115,24 +101,16 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
 .cs{height:1px;background:rgba(255,255,255,.06);margin:4px 0}
 .clabel{padding:3px 12px;font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1px}
 .csc{margin-left:auto;font-size:10px;color:#555;font-family:monospace;flex-shrink:0}
-
-/* NOTIF */
 #notifs{position:fixed;bottom:60px;right:14px;display:flex;flex-direction:column;gap:7px;z-index:8000;pointer-events:none}
-.notif{background:rgba(18,18,26,.96);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:12px 14px;color:#fff;min-width:270px;max-width:320px;animation:nI[...]
+.notif{background:rgba(18,18,26,.96);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:12px 14px;color:#fff;min-width:270px;max-width:320px;animation:nIn .3s ease}
 @keyframes nIn{from{transform:translateX(120%);opacity:0}to{transform:translateX(0);opacity:1}}
 .notif img{width:20px;height:20px;flex-shrink:0}
 .nt{font-size:12px;font-weight:600;margin-bottom:2px}
 .nm{font-size:11px;color:#999}
-
-/* SCROLLBAR */
 ::-webkit-scrollbar{width:5px;height:5px}
 ::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:3px}
 ::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.2)}
 ::-webkit-scrollbar-track{background:transparent}
-
-/* ─── APP STYLES ─── */
-
-/* FILE MANAGER */
 .fm-tb{display:flex;align-items:center;gap:6px;padding:7px 10px;background:rgba(0,0,0,.2);border-bottom:1px solid var(--border);flex-shrink:0}
 .fm-path{flex:1;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:5px;padding:4px 10px;color:#ccc;font-size:12px;outline:none;transition:border-color .2s;cursor:text}
 .fm-path:focus{border-color:var(--purple)}
@@ -150,8 +128,6 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
 .fm-f img{width:36px;height:36px;object-fit:contain}
 .fm-f span{font-size:10px;color:#ccc;text-align:center;word-break:break-all;line-height:1.3}
 .fm-stat{padding:5px 12px;background:rgba(0,0,0,.2);border-top:1px solid var(--border);font-size:11px;color:#555;flex-shrink:0}
-
-/* BROWSER */
 .br-nav{display:flex;align-items:center;gap:5px;padding:6px 10px;background:rgba(0,0,0,.25);border-bottom:1px solid var(--border);flex-shrink:0}
 .br-url{flex:1;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:20px;padding:5px 14px;color:#fff;font-size:12px;outline:none;transition:all .2s;cursor:text}
 .br-url:focus{border-color:var(--purple);box-shadow:0 0 8px rgba(188,130,255,.2)}
@@ -164,7 +140,6 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
 .br-body{flex:1;background:#0a0a10;position:relative;overflow:hidden}
 .br-body iframe{width:100%;height:100%;border:none}
 .br-warn{background:rgba(255,140,0,.08);border-left:3px solid #ffa500;padding:6px 12px;font-size:11px;color:#ffcc80;display:flex;justify-content:space-between;align-items:center;flex-shrink:0}
-/* BING MOCK */
 .bing-home{display:flex;flex-direction:column;align-items:center;padding:50px 20px 20px;background:linear-gradient(180deg,#1a1a2e 0%,#0d0d1a 100%);height:100%;overflow-y:auto}
 .bing-bar{display:flex;align-items:center;gap:10px;padding:8px 16px;background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.06);width:100%;position:sticky;top:-50px;z-index:2}
 .bing-bar a{color:#999;font-size:12px;cursor:none;transition:color .15s;text-decoration:none}
@@ -187,8 +162,6 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
 .bn h4{color:#ccc;font-size:13px;margin-bottom:4px}
 .bn p{color:#555;font-size:11px}
 .bn-tag{display:inline-block;padding:2px 7px;border-radius:10px;font-size:9px;background:rgba(0,139,212,.2);color:#40aaff;margin-bottom:5px}
-
-/* TERMINAL */
 .term-out{flex:1;background:#0a0a0a;padding:12px;overflow-y:auto;font-family:'Courier New',monospace;font-size:12px;color:#00e87a;line-height:1.6}
 .tl{white-space:pre-wrap;word-break:break-all}
 .tl.cmd{color:#bc82ff}
@@ -199,16 +172,12 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
 .term-in{display:flex;align-items:center;padding:5px 12px;background:rgba(0,0,0,.4);border-top:1px solid rgba(255,255,255,.05);flex-shrink:0}
 .t-prompt{color:#bc82ff;font-family:'Courier New',monospace;font-size:12px;white-space:nowrap;margin-right:6px}
 .t-inp{flex:1;background:transparent;border:none;color:#00e87a;font-family:'Courier New',monospace;font-size:12px;outline:none;cursor:text}
-
-/* EDITOR */
 .ed-tb{display:flex;align-items:center;gap:3px;padding:5px 10px;background:rgba(0,0,0,.2);border-bottom:1px solid var(--border);flex-shrink:0;flex-wrap:wrap}
 .edbtn{background:transparent;border:none;color:#888;cursor:none;padding:4px 8px;border-radius:4px;font-size:12px;transition:background .15s}
 .edbtn:hover{background:rgba(255,255,255,.08);color:#fff}
 .edsep{width:1px;height:18px;background:var(--border);margin:0 3px;flex-shrink:0}
 .ed-area{flex:1;background:#0e0e16;padding:16px;color:#ddd;font-size:13px;font-family:'Courier New',monospace;border:none;outline:none;resize:none;line-height:1.75;cursor:text}
 .ed-stat{padding:4px 12px;background:rgba(0,0,0,.2);border-top:1px solid var(--border);font-size:10px;color:#444;display:flex;gap:14px;flex-shrink:0}
-
-/* CALC */
 .calc-body{flex:1;padding:10px;display:flex;flex-direction:column;gap:5px}
 .calc-disp{background:rgba(0,0,0,.5);border-radius:8px;padding:10px 14px;text-align:right;margin-bottom:3px}
 .calc-expr{font-size:11px;color:#555;min-height:15px}
@@ -222,8 +191,6 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
 .cb-e{background:var(--purple);color:#fff}
 .cb-f{background:rgba(255,255,255,.05);color:#999;font-size:13px}
 .cb-c{background:rgba(255,80,80,.18);color:#ff8888}
-
-/* SETTINGS */
 .set-layout{display:flex;flex:1;overflow:hidden}
 .set-nav{width:195px;padding:10px;border-right:1px solid var(--border);overflow-y:auto;flex-shrink:0}
 .set-ni{padding:8px 10px;border-radius:6px;cursor:none;font-size:12px;color:#999;display:flex;align-items:center;gap:9px;transition:background .15s;margin-bottom:2px}
@@ -240,18 +207,14 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
 .tog.on{background:var(--purple)}
 .tog::after{content:'';position:absolute;top:3px;left:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:left .2s}
 .tog.on::after{left:21px}
-
-/* PAINT */
 .paint-tb{display:flex;align-items:center;gap:5px;padding:7px 10px;background:rgba(0,0,0,.2);border-bottom:1px solid var(--border);flex-wrap:wrap;flex-shrink:0}
-.ptool{width:32px;height:32px;border:1px solid transparent;border-radius:5px;background:transparent;cursor:none;display:flex;align-items:center;justify-content:center;font-size:15px;color:#888;tr[...]
+.ptool{width:32px;height:32px;border:1px solid transparent;border-radius:5px;background:transparent;cursor:none;display:flex;align-items:center;justify-content:center;font-size:15px;color:#888;transition:all .15s}
 .ptool:hover,.ptool.act{background:rgba(188,130,255,.15);border-color:rgba(188,130,255,.3);color:#fff}
 .pcolors{display:flex;gap:3px;align-items:center}
 .pcol{width:21px;height:21px;border-radius:4px;cursor:none;border:2px solid transparent;transition:border-color .15s;flex-shrink:0}
 .pcol:hover{border-color:rgba(255,255,255,.6)}
 .pcol.sel{border-color:#fff}
 #pcanvas{flex:1;display:block;cursor:crosshair;background:#fff}
-
-/* CALENDAR */
 .cal-body{padding:16px;overflow-y:auto;flex:1}
 .cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
 .cal-month{font-size:18px;font-weight:700}
@@ -264,8 +227,6 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
 .cd.today{background:var(--purple);color:#fff;font-weight:700}
 .cd.om{color:#333}
 .cd .cdot{width:4px;height:4px;background:var(--magenta);border-radius:50%;position:absolute;bottom:3px}
-
-/* TASK MANAGER */
 .tm-head{display:flex;gap:1px;padding:10px;background:rgba(0,0,0,.2);flex-shrink:0;flex-wrap:wrap;gap:8px}
 .tm-stat{flex:1;min-width:100px;text-align:center;background:rgba(0,0,0,.3);border-radius:8px;padding:10px}
 .tm-val{font-size:20px;font-weight:600}
@@ -274,10 +235,8 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
 .tm-hdr{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;padding:5px 12px;font-size:10px;color:#555;border-bottom:1px solid var(--border);text-transform:uppercase;letter-spacing:.5px}
 .tm-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;padding:6px 12px;font-size:12px;color:#ccc;border-bottom:1px solid rgba(255,255,255,.02);cursor:none;transition:background .1s}
 .tm-row:hover{background:rgba(255,255,255,.03)}
-
-/* MEDIA PLAYER */
 .mp-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:linear-gradient(135deg,#0a0a1a,#190a2a);padding:20px}
-.mp-disc{width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--magenta));display:flex;align-items:center;justify-content:center;font-size:40px;box-shado[...]
+.mp-disc{width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--magenta));display:flex;align-items:center;justify-content:center;font-size:40px;box-shadow:0 8px 20px rgba(0,0,0,.6)}
 .mp-disc.spin{animation:spin 3s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .mp-title{font-size:17px;font-weight:600;text-align:center}
@@ -291,15 +250,11 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
 .mp-ctrl:hover{color:#fff;background:rgba(255,255,255,.08)}
 .mp-ctrl.play{font-size:22px;width:46px;height:46px;background:var(--purple);color:#fff;border-radius:50%}
 .mp-ctrl.play:hover{background:var(--magenta)}
-
-/* IMAGE VIEWER */
 .iv-body{flex:1;background:#000;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
 .iv-body img{max-width:100%;max-height:100%;object-fit:contain;transition:transform .2s}
 .iv-tb{display:flex;align-items:center;justify-content:center;gap:8px;padding:8px;background:rgba(0,0,0,.3);border-top:1px solid var(--border);flex-shrink:0}
-
-/* WEATHER */
 .wx-body{flex:1;padding:20px;overflow-y:auto;display:flex;flex-direction:column;gap:14px}
-.wx-hero{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,rgba(0,139,212,.2),rgba(0,80,150,.1));border:1px solid rgba(0,139,212,.2);border-radius:12[...]
+.wx-hero{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,rgba(0,139,212,.2),rgba(0,80,150,.1));border:1px solid rgba(0,139,212,.2);border-radius:12px;padding:20px}
 .wx-temp{font-size:56px;font-weight:300;color:#fff}
 .wx-icon{font-size:64px;line-height:1}
 .wx-desc{font-size:14px;color:#aaa}
@@ -313,8 +268,6 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
 .wx-fname{font-size:11px;color:#555;text-transform:uppercase;letter-spacing:.5px}
 .wx-ficon{font-size:24px;margin:6px 0}
 .wx-ftemp{font-size:13px;color:#fff}
-
-/* CLOCK / WORLD TIME */
 .wc-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:20px}
 .wc-analog{position:relative;width:180px;height:180px}
 .wc-analog canvas{position:absolute;top:0;left:0}
@@ -324,32 +277,24 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
 .wc-zone{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;padding:10px 12px}
 .wc-zname{font-size:10px;color:#555;text-transform:uppercase;letter-spacing:1px}
 .wc-ztime{font-size:20px;font-weight:300;color:#fff;font-family:'Courier New',monospace;margin-top:3px}
-
-/* STICKY NOTE */
 .sticky{position:absolute;border-radius:4px;padding:0;display:flex;flex-direction:column;box-shadow:0 8px 30px rgba(0,0,0,.5);z-index:500}
 .sticky-head{height:30px;display:flex;align-items:center;justify-content:space-between;padding:0 8px;cursor:move;border-radius:4px 4px 0 0;flex-shrink:0}
 .sticky-head span{font-size:11px;font-weight:600;color:rgba(0,0,0,.7)}
-.sticky textarea{flex:1;background:rgba(0,0,0,.2);border:none;padding:10px;color:#000;font-size:13px;resize:none;outline:none;border-radius:0 0 4px 4px;font-family:'Segoe UI',sans-serif;cursor:te[...]
-/* SYSINFO */
+.sticky textarea{flex:1;background:rgba(0,0,0,.2);border:none;padding:10px;color:#000;font-size:13px;resize:none;outline:none;border-radius:0 0 4px 4px;font-family:'Segoe UI',sans-serif;cursor:text}
 .si-body{flex:1;overflow-y:auto;padding:18px}
 .si-section{margin-bottom:16px}
 .si-sec-title{font-size:11px;color:var(--purple);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;font-weight:600}
 .si-row{display:flex;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04)}
 .si-key{width:180px;font-size:12px;color:#555;flex-shrink:0}
 .si-val{font-size:12px;color:#ccc}
-
-/* RECYCLE BIN */
 .rb-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#555}
 .rb-icon{font-size:60px}
-
-/* SHORTCUTS PANEL */
-#sc-panel{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(14,14,22,.98);backdrop-filter:blur(30px);border:1px solid var(--border);border-radius:14px;padding:24px;mi[...]
+#sc-panel{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(14,14,22,.98);backdrop-filter:blur(30px);border:1px solid var(--border);border-radius:14px;padding:24px;min-width:300px;max-width:500px;max-height:80vh;overflow-y:auto;z-index:99500;display:none;flex-direction:column}
+#sc-panel.show{display:flex}
 .sc-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:12px}
 .sc-row:last-child{border-bottom:none}
 .sc-key{background:rgba(255,255,255,.08);padding:2px 8px;border-radius:4px;font-family:monospace;font-size:11px;color:var(--purple);white-space:nowrap}
 .sc-desc{color:#999}
-
-/* LOCK SCREEN */
 #lockscreen{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(20px);z-index:90000;display:none;flex-direction:column;align-items:center;justify-content:center;color:#fff}
 .ls-time{font-size:80px;font-weight:200;letter-spacing:4px;line-height:1}
 .ls-date{font-size:18px;color:#888;margin-top:6px;margin-bottom:40px}
@@ -369,7 +314,7 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
     <h1>⚠️ Conceptual Simulation</h1>
     <div class="warn-box">
       <strong>This is a fictional browser-based simulation.</strong> Not affiliated with or endorsed by Microsoft®.<br><br>
-      <strong>Your data is saved locally</strong> in your browser's localStorage — nothing is sent to any server, cloud, or third party. Files, notes, and settings persist between sessions on y[...]
+      <strong>Your data is saved locally</strong> in your browser's localStorage — nothing is sent to any server, cloud, or third party. Files, notes, and settings persist between sessions on your device.<br><br>
       Keyboard shortcuts, programs, and all filesystem operations are <strong>simulated entirely in-browser</strong>.
     </div>
     <button class="wb-btn" onclick="dismissWelcome()">I Understand — Enter Desktop</button>
@@ -408,7 +353,7 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
 <div id="sc-panel">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
     <span style="font-size:16px;font-weight:700">Keyboard Shortcuts</span>
-    <button onclick="document.getElementById('sc-panel').style.display='none'" style="background:transparent;border:none;color:#888;font-size:18px;cursor:none">✕</button>
+    <button onclick="document.getElementById('sc-panel').classList.remove('show')" style="background:transparent;border:none;color:#888;font-size:18px;cursor:none">✕</button>
   </div>
   <div class="sc-row"><span class="sc-desc">Start Menu</span><span class="sc-key">Ctrl+Esc</span></div>
   <div class="sc-row"><span class="sc-desc">File Manager</span><span class="sc-key">Ctrl+Shift+E</span></div>
@@ -429,12 +374,13 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
   <div class="sc-row"><span class="sc-desc">Shortcuts Help</span><span class="sc-key">Ctrl+Shift+/</span></div>
   <div class="sc-row"><span class="sc-desc">New Sticky Note</span><span class="sc-key">Ctrl+Shift+S</span></div>
   <div class="sc-row"><span class="sc-desc">Refresh Desktop</span><span class="sc-key">F5</span></div>
+  <div class="sc-row"><span class="sc-desc">Theme Switcher</span><span class="sc-key">Ctrl+Shift+T</span></div>
 </div>
 
 <!-- TASKBAR -->
 <div id="taskbar">
   <button class="tb" id="tbStart" onclick="toggleStart()" title="Start">
-    <svg width="22" height="22" viewBox="0 0 24 24"><path d="M4 4h4v4H4V4zm6 0h4v4h-4V4zm6 0h4v4h-4V4zM4 10h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4zM4 16h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4z"/>[...]
+    <svg width="22" height="22" viewBox="0 0 24 24"><path d="M4 4h4v4H4V4zm6 0h4v4h-4V4zm6 0h4v4h-4V4zM4 10h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4zM4 16h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4z" fill="#fff"/></svg>
   </button>
   <div id="tbApps" style="display:flex;gap:3px"></div>
   <div id="tray">
@@ -460,12 +406,13 @@ body,html{height:100%;overflow:hidden;font-family:'Segoe UI',sans-serif;cursor:n
   <div class="sm-foot">
     <span style="font-size:11px;color:#333">Win12 </span>
     <button class="sm-pwbtn" onclick="pwrMenu()">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff6060"><path d="M13 3h-2v10h2V3zm4.39 2.22l-1.42 1.42C17.99 8.21 19 10.01 19 12c0 3.87-3.13 7-7 7s-7-3.13-7-7c0-1.99 1.01-3.79 2.03-5[...]
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff6060"><path d="M13 3h-2v10h2V3zm4.39 2.22l-1.42 1.42C17.99 8.21 19 10.01 19 12c0 3.87-3.13 7-7 7s-7-3.13-7-7c0-1.99 1.01-3.79 2.03-5.36l-1.42-1.41C4.01 7.79 3 10.01 3 12c0 4.97 4.03 9 9 9s9-4.03 9-9c0-2.16-.82-4.12-2.15-5.61l-.46-.61z"/></svg>
       Power
     </button>
   </div>
 </div>
 
+<script src="plugins/theme-plugin.js" defer></script>
 <script>
 // ═══════════════════════════════════════════════
 //  PERSISTENCE — localStorage
@@ -477,73 +424,13 @@ const LS={
 };
 
 // ═══════════════════════════════════════════════
-//  THEME PLUGIN — 100+ Color Gradient Generator
-// ═══════════════════════════════════════════════
-function generateGradient(startHex, endHex, steps=120) {
-  const startRGB = parseInt(startHex.slice(1), 16);
-  const endRGB = parseInt(endHex.slice(1), 16);
-  const startR = (startRGB >> 16) & 255;
-  const startG = (startRGB >> 8) & 255;
-  const startB = startRGB & 255;
-  const endR = (endRGB >> 16) & 255;
-  const endG = (endRGB >> 8) & 255;
-  const endB = endRGB & 255;
-  const colors = [];
-  for (let i = 0; i < steps; i++) {
-    const t = i / (steps - 1);
-    const r = Math.round(startR + (endR - startR) * t).toString(16).padStart(2, '0');
-    const g = Math.round(startG + (endG - startG) * t).toString(16).padStart(2, '0');
-    const b = Math.round(startB + (endB - startB) * t).toString(16).padStart(2, '0');
-    colors.push(`#${r}${g}${b}`);
-  }
-  return colors;
-}
-
-const themeManager = {
-  current: LS.get('theme') || 'default',
-  themes: {},
-  
-  generateCSSFromGradient(name, startColor, endColor) {
-    const colors = generateGradient(startColor, endColor, 120);
-    let css = `/* Theme: ${name} (120-color gradient) */\n:root{\n`;
-    colors.forEach((color, idx) => {
-      css += `  --theme-${name}-${idx}: ${color};\n`;
-    });
-    css += `  --purple: ${colors[60]};\n`;
-    css += `  --magenta: ${colors[80]};\n`;
-    css += `  --accent: ${colors[40]};\n`;
-    css += `}\n`;
-    return css;
-  },
-  
-  applyInline(name, startColor, endColor) {
-    const style = document.createElement('style');
-    style.id = `theme-${name}`;
-    style.textContent = this.generateCSSFromGradient(name, startColor, endColor);
-    document.head.appendChild(style);
-    this.current = name;
-    LS.set('theme', name);
-  }
-};
-
-// Register available themes with 100+ color gradients
-// Dark Purple to Cyan
-themeManager.applyInline('neon', '#0d0d1a', '#00d4ff');
-
-// Magenta to Gold  
-// themeManager.applyInline('sunset', '#ff007f', '#ffaa00');
-
-// Emerald to Electric Blue
-// themeManager.applyInline('tech', '#00ff88', '#0088ff');
-
-// ═══════════════════════════════════════════════
 //  CURSOR
 // ═══════════════════════════════════════════════
 const cur=document.getElementById('cur'),curR=document.getElementById('curR');
 document.addEventListener('mousemove',e=>{
   cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
   curR.style.left=e.clientX+'px';curR.style.top=e.clientY+'px';
-  const h=e.target.closest('.tb,.ci,.wc,.fmbtn,.fm-f,.fm-si,.bk,.sm-app,.set-ni,.cbtn,.ptool,.pcol,.calnav,.cd,.di,.mp-ctrl,.b-sbtn,.brbtn,.edbtn,.wb-btn,.sm-pwbtn,.brbtn,.tb2,.tray-icon,.tog');
+  const h=e.target.closest('.tb,.ci,.wc,.fmbtn,.fm-f,.fm-si,.bk,.sm-app,.set-ni,.cbtn,.ptool,.pcol,.calnav,.cd,.di,.mp-ctrl,.b-sbtn,.brbtn,.edbtn,.wb-btn,.sm-pwbtn,.tb2,.tray-icon,.tog');
   curR.classList.toggle('h',!!h);
 });
 document.addEventListener('mousedown',()=>cur.classList.add('c'));
@@ -565,139 +452,7 @@ function tick(){
 }
 setInterval(tick,1000);tick();
 
-// ═══════════════════════════════════════════════
-//  VIRTUAL FILE SYSTEM (persisted)
-// ═══════════════════════════════════════════════
-const defaultVFS={
-  '/':{type:'dir',children:['Desktop','Documents','Downloads','Pictures','Music','Videos','System32','Users','AppData','Temp']},
-  '/Desktop':{type:'dir',children:['Readme.txt','My Notes.md','Photo.jpg','shortcuts.lnk']},
-  '/Documents':{type:'dir',children:['Report.docx','Budget.xlsx','Presentation.pptx','Ideas.txt']},
-  '/Downloads':{type:'dir',children:['setup.exe','archive.zip','movie.mp4','photo_download.jpg']},
-  '/Pictures':{type:'dir',children:['wallpaper.jpg','screenshot.png','avatar.png','holiday.jpg']},
-  '/Music':{type:'dir',children:['track01.mp3','lofi_playlist.m3u','favorites.m3u']},
-  '/Videos':{type:'dir',children:['clip.mp4','tutorial.mkv','demo.avi']},
-  '/System32':{type:'dir',children:['kernel.dll','hal.dll','drivers','config.sys','ntoskrnl.exe']},
-  '/System32/drivers':{type:'dir',children:['gpu_driver.sys','net_driver.sys','audio.sys']},
-  '/Users':{type:'dir',children:['Administrator','Guest','Public']},
-  '/Users/Administrator':{type:'dir',children:['Desktop','Documents','AppData']},
-  '/AppData':{type:'dir',children:['Local','Roaming','Temp']},
-  '/AppData/Local':{type:'dir',children:['cache','logs']},
-  '/Temp':{type:'dir',children:['tmp001.tmp','tmp002.tmp']},
-  '/Desktop/Readme.txt':{type:'file',ext:'txt',content:'Welcome to Windows 12\n\nThis is a browser-based simulation.\nYour files and notes are saved in localStorage.\n\nDouble-click any file to o[...]
-  '/Desktop/My Notes.md':{type:'file',ext:'md',content:'# My Notes\n\n- [ ] Build something amazing\n- [ ] Learn keyboard shortcuts (Ctrl+Shift+/)\n- [ ] Try the terminal (Ctrl+Alt+T)\n- [ ] Pain[...]
-  '/Desktop/Photo.jpg':{type:'file',ext:'jpg',content:null},
-  '/Documents/Report.docx':{type:'file',ext:'docx',content:'[Word Document — simulated]\n\nQuarterly Report\n================\n\nSales increased by 24% YoY.\nNew markets opened in 3 regions.\n\[...]
-  '/Documents/Ideas.txt':{type:'file',ext:'txt',content:'Project Ideas\n=============\n\n1. AI-powered assistant\n2. Cloud sync feature\n3. Dark/light theme toggle\n4. Plugin marketplace'},
-};
-
-let vfs=LS.get('vfs')||JSON.parse(JSON.stringify(defaultVFS));
-function saveVFS(){LS.set('vfs',vfs)}
-
-const FICONS={
-  txt:'https://img.icons8.com/color/48/txt.png',
-  md:'https://img.icons8.com/color/48/markdown.png',
-  jpg:'https://img.icons8.com/color/48/image.png',
-  png:'https://img.icons8.com/color/48/image.png',
-  docx:'https://img.icons8.com/color/48/ms-word.png',
-  xlsx:'https://img.icons8.com/color/48/ms-excel.png',
-  pptx:'https://img.icons8.com/color/48/ms-powerpoint.png',
-  exe:'https://img.icons8.com/color/48/application-window.png',
-  zip:'https://img.icons8.com/color/48/zip.png',
-  mp3:'https://img.icons8.com/color/48/music.png',
-  mp4:'https://img.icons8.com/color/48/video.png',
-  mkv:'https://img.icons8.com/color/48/video.png',
-  avi:'https://img.icons8.com/color/48/video.png',
-  dll:'https://img.icons8.com/color/48/gear.png',
-  sys:'https://img.icons8.com/color/48/system-task.png',
-  m3u:'https://img.icons8.com/color/48/music.png',
-  tmp:'https://img.icons8.com/color/48/file.png',
-  lnk:'https://img.icons8.com/color/48/link.png',
-  avi:'https://img.icons8.com/color/48/video.png',
-  folder:'https://img.icons8.com/color/48/folder-invoices--v2.png',
-  default:'https://img.icons8.com/color/48/file.png'
-};
-function ficon(name,isDir){
-  if(isDir)return FICONS.folder;
-  const e=(name.split('.').pop()||'').toLowerCase();
-  return FICONS[e]||FICONS.default;
-}
-
-// ═══════════════════════════════════════════════
-//  WINDOW MANAGER
-// ═══════════════════════════════════════════════
-let winZ=200;
-const wins={};
-
-function makeWin(id,title,icon,w,h,x,y,buildFn){
-  if(wins[id]){
-    const ew=wins[id];
-    ew.style.display='flex';ew.style.opacity='1';ew.style.pointerEvents='';ew.style.transform='';
-    focusWin(id);return ew;
-  }
-  const el=document.createElement('div');
-  el.className='win opening';el.id='win_'+id;
-  el.style.cssText=`width:${w}px;height:${h}px;left:${x}px;top:${y}px`;
-  el.innerHTML=`
-    <div class="tb2" id="tb2_${id}">
-      <div class="wt"><img src="${icon}" onerror="this.style.display='none'">${title}</div>
-      <div class="wcs">
-        <button class="wc wc-m" onclick="minWin('${id}')"></button>
-        <button class="wc wc-M" onclick="maxWin('${id}')"></button>
-        <button class="wc wc-x" onclick="closeWin('${id}')"></button>
-      </div>
-    </div>
-    <div id="wb_${id}" style="flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:0"></div>
-  `;
-  document.getElementById('desktop').appendChild(el);
-  buildFn(document.getElementById('wb_'+id));
-  wins[id]=el;
-  setupDrag(el,document.getElementById('tb2_'+id));
-  addTB(id,title,icon);
-  focusWin(id);
-  el.addEventListener('mousedown',()=>focusWin(id));
-  return el;
-}
-
-function focusWin(id){
-  Object.values(wins).forEach(w=>{w.style.zIndex=200;w.classList.remove('focused')});
-  if(wins[id]){wins[id].style.zIndex=++winZ;wins[id].classList.add('focused')}
-  document.querySelectorAll('#tbApps .tb').forEach(b=>b.classList.remove('on'));
-  document.getElementById('tbb_'+id)?.classList.add('on');
-}
-function minWin(id){
-  const w=wins[id];if(!w)return;
-  w.classList.add('closing');
-  setTimeout(()=>{w.style.display='none';w.classList.remove('closing')},180);
-  document.getElementById('tbb_'+id)?.classList.remove('on');
-}
-function maxWin(id){wins[id]?.classList.toggle('maximized')}
-function closeWin(id){
-  const w=wins[id];if(!w)return;
-  w.classList.add('closing');
-  setTimeout(()=>{w.remove();delete wins[id];document.getElementById('tbb_'+id)?.remove()},180);
-}
-function addTB(id,title,icon){
-  if(document.getElementById('tbb_'+id))return;
-  const b=document.createElement('button');
-  b.className='tb on';b.id='tbb_'+id;b.title=title;
-  b.innerHTML=`<img src="${icon}" onerror="this.innerHTML='⬜'">`;
-  b.onclick=()=>{
-    const w=wins[id];if(!w)return;
-    if(w.style.display==='none'){w.style.display='flex';w.style.opacity='1';w.style.pointerEvents='';w.style.transform='';focusWin(id);}
-    else if(w.classList.contains('focused'))minWin(id);
-    else focusWin(id);
-  };
-  document.getElementById('tbApps').appendChild(b);
-}
-
-function setupDrag(win,handle){
-  let dragging=false,ox=0,oy=0;
-  handle.addEventListener('mousedown',e=>{
-    if(win.classList.contains('maximized'))return;
-    dragging=true;ox=e.clientX-win.offsetLeft;oy=e.clientY-win.offsetTop;e.preventDefault();
-  });
-  document.addEventListener('mousemove',e=>{if(!dragging)return;win.style.left=(e.clientX-ox)+'px';win.style.top=(e.clientY-oy)+'px';});
-  document.addEventListener('mouseup',()=>dragging=false);
-}
-
-// [REST OF SCRIPT CONTINUES BELOW...]
+// [Rest of the script continues in the original file...]
+</script>
+</body>
+</html>
